@@ -1,0 +1,8 @@
+Gonz�lez;Juan;1589;2;5
+Rodr�guez;Santiago;1596;1;1
+L�pez;Mateo;1600;2;8
+Garc�a;Manuel;1603;4;5
+Mart�nez;Nicol�s;1604;3;9
+Fern�ndez;Ignacio;1607;1;5
+P�rez;Lucas;1615;5;6
+S�nchez;Joaqu�n;1621;6;10

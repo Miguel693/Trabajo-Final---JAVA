@@ -1,0 +1,6 @@
+Gonz�lez;Santiago;2589;2;5
+Rodr�guez;Juan;2596;1;1
+L�pez;Manuel;2600;2;8
+Garc�a;Mateo;2603;4;5
+Mart�nez;Ignacio;2604;3;9
+Fern�ndez;Nicol�s;2607;1;5
