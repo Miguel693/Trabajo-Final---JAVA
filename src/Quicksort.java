@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Quicksort {
   
@@ -42,26 +41,19 @@ public class Quicksort {
    ** Quicksort para ordenar una matriz. 
    */
 
-  public static void matriz(Alumno[][] mat, String param){
-    matriz(mat, 0, mat[0].length-1, 0, param);
+  public static void matriz(Alumno[][] mat, String param, int row){
+    if(row < mat.length){
+      matriz(mat, 0, mat[0].length-1, row, param);
+      matriz(mat,param,row + 1);
+    }
   }
 
   public static void matriz(Alumno[][] mat, int low, int high, int row, String param){
-    Scanner sc = new Scanner(System.in);
-    if( row < mat.length ){
-      System.out.println(row);
       if( low < high ){
         int index = partition(mat, low, high, row, param);
         matriz(mat, low, index - 1, row, param);
         matriz(mat, index + 1, high, row, param);
-        return;
       }
-      System.out.println(row);
-      sc.nextLine();
-
-      matriz(mat, 0, 29, row + 1, param);
-      return;
-    }
   }
 
   public static int partition( Alumno[][] mat, int low, int high, int row, String param){
@@ -69,9 +61,25 @@ public class Quicksort {
     int i = low - 1;
     for( int j = low; j < high; j++){
       if( mat[row][j] != null && pivot != null){
-        if( mat[row][j].getPromedio() <= pivot.getPromedio()){
-          i += 1;
-          swap(mat, i, j, row);
+        switch (param) {
+          case "promedio":
+            if( mat[row][j].getPromedio() <= pivot.getPromedio()){
+              i += 1;
+              swap(mat, i, j, row);
+            }
+            break;
+          case "apellido":
+            if(mat[row][j].getApellido().compareTo(pivot.getApellido()) < 0){
+              i += 1;
+              swap(mat,i,j,row);
+            }
+            break;
+          default:
+            if(mat[row][j].getLegajo() <= pivot.getLegajo() ){
+              i += 1;
+              swap(mat, i, j, row);
+            }
+            break;
         }
       }else if(mat[row][j] != null && pivot == null){
         i+=1;
